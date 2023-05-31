@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="962.0" stylesheets="@shopkeeper.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproject.shopkeeperController">
+   <left>
+      <VBox prefHeight="611.0" prefWidth="212.0" styleClass="element" stylesheets="@shopkeeper.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="top_box" prefHeight="200.0" prefWidth="212.0" spacing="15.0">
+               <children>
+                  <HBox fx:id="view_prod_box" alignment="CENTER" onMouseClicked="#view_inventory" prefHeight="40.0" prefWidth="202.0" stylesheets="@shopkeeper.css">
+                     <children>
+                        <ImageView fx:id="add_image2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../../img/icons8-shop-50.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="View Inventory">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow_effect" />
+                     </styleClass>
+                  </HBox>
+                  <HBox fx:id="add_prod_box" alignment="CENTER" onMouseClicked="#add_product" prefHeight="44.0" prefWidth="215.0" stylesheets="@shopkeeper.css">
+                     <children>
+                        <ImageView fx:id="add_image" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../../img/add.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Add Product">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow_effect" />
+                     </styleClass>
+                  </HBox>
+                  <HBox fx:id="del_prod_box" alignment="CENTER" onMouseClicked="#delete_product" prefHeight="44.0" prefWidth="215.0" stylesheets="@shopkeeper.css">
+                     <children>
+                        <ImageView fx:id="add_image1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" smooth="false">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../../img/delete.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Delete Product">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="menu" />
+                        <String fx:value="shadow_effect" />
+                     </styleClass>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <Label prefHeight="37.0" prefWidth="154.0" text="Select Category">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="4.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane prefHeight="353.0" prefWidth="212.0" stylesheets="@shopkeeper.css">
+               <content>
+                  <VBox fx:id="category_box" prefHeight="362.0" prefWidth="208.0" spacing="5.0" stylesheets="@shopkeeper.css" />
+               </content>
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane fx:id="nav_top" prefHeight="52.0" prefWidth="962.0" styleClass="nav" stylesheets="@shopkeeper.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logout_btn" layoutX="872.0" layoutY="8.0" mnemonicParsing="false" onAction="#logout_process" stylesheets="@shopkeeper.css" text="Log Out">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="shadow_effect" />
+                  <String fx:value="menu" />
+               </styleClass>
+            </Button>
+            <HBox alignment="CENTER" layoutX="14.0" layoutY="7.0" prefHeight="39.0" prefWidth="280.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/user.png" />
+                     </image></ImageView>
+                  <Label fx:id="my_account" prefHeight="39.0" prefWidth="225.0" text="My Account">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="522.0" prefWidth="665.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="420.0" layoutY="9.0" prefHeight="27.0" prefWidth="322.0" styleClass="shadow_effect" stylesheets="@shopkeeper.css">
+               <children>
+                  <TextField fx:id="search_bar" onKeyReleased="#search_dynamic" prefHeight="26.0" prefWidth="208.0" promptText="Search">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ImageView fitHeight="25.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow_effect">
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../../img/loupe.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <ScrollPane fx:id="scroller" layoutX="14.0" layoutY="89.0" prefHeight="502.0" prefWidth="726.0" style="-fx-background-color: transparent;" styleClass="trans" stylesheets="@shopkeeper.css">
+               <content>
+                  <VBox fx:id="prod_box" prefWidth="716.0" spacing="10.0" style="-fx-background-color: transparent; -fx-border-radius: 25;" styleClass="trans" stylesheets="@shopkeeper.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+            <Label fx:id="SideBarLabel" layoutX="14.0" layoutY="8.0" prefHeight="33.0" prefWidth="192.0" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <HBox fx:id="ColumnNameBox" alignment="CENTER_LEFT" layoutX="18.0" layoutY="52.0" prefHeight="34.0" prefWidth="720.0" spacing="12.0">
+               <children>
+                  <Label fx:id="ColProductName" alignment="CENTER" prefHeight="27.0" prefWidth="214.0" styleClass="menu" stylesheets="@shopkeeper.css" text="Product Name">
+                     <padding>
+                        <Insets bottom="5.0" left="8.0" right="5.0" top="5.0" />
+                     </padding></Label>
+                  <Label fx:id="ColProductPrice" alignment="CENTER" prefHeight="27.0" prefWidth="58.0" styleClass="menu" stylesheets="@shopkeeper.css" text="Price">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></Label>
+                  <Label fx:id="ColProductQuantity" alignment="CENTER" prefHeight="26.0" prefWidth="84.0" styleClass="menu" stylesheets="@shopkeeper.css" text="Quantity">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding></Label>
+                  <Label fx:id="ColProductDate" alignment="CENTER" prefHeight="27.0" prefWidth="102.0" styleClass="menu" stylesheets="@shopkeeper.css" text="Mfg. Date">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></Label>
+                  <Label fx:id="ColProduct5th" alignment="CENTER" prefHeight="27.0" prefWidth="106.0" styleClass="menu" stylesheets="@shopkeeper.css" text="BestBefore">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></Label>
+                  <Label fx:id="ColProduct6th" alignment="CENTER" prefHeight="26.0" prefWidth="58.0" styleClass="menu" stylesheets="@shopkeeper.css" text="Delete" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

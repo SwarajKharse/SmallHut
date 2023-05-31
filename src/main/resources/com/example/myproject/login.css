@@ -1,0 +1,40 @@
+.full_pane{
+    -fx-background-radius: 20;
+    -fx-alignment: center;
+}
+
+.page{
+    -fx-background-color: linear-gradient(to bottom right,#F0F0F0, #FFEBEB, #FDE2F3, #E5BEEC);
+}
+
+.log_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #B08BBB;
+}
+.log_btn:hover{
+    -fx-background-color: #674188;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+}
+
+.sign_btn{
+    -fx-background-radius: 50;
+    -fx-text-fill: black;
+    -fx-background-color: #ECF9FF;
+}
+.sign_btn:hover{
+    -fx-background-color: #E5BEEC;
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+}
+.side_pg {
+    -fx-background-color: linear-gradient(to bottom right, #C3ACD0, #674188);
+}
+
+.txt_bx {
+    -fx-background-radius: 20;
+    -fx-border-radius: 5;
+}
+
+.txt_bx:hover{
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+}
+

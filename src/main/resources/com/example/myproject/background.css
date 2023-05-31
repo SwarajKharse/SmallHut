@@ -1,0 +1,11 @@
+.root {
+    -fx-background-image: url('file:///C:/Users/swara/IdeaProjects/MyProject/src/main/resources/img/back.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.back {
+    -fx-background-image: url('file:///C:/Users/swara/IdeaProjects/MyProject/src/main/resources/img/shopbag.jpg');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

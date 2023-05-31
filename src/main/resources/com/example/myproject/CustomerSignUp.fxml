@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproject.CustomerSignUpController">
+   <right>
+      <AnchorPane prefHeight="654.0" prefWidth="481.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="334.0" fitWidth="337.0" layoutX="84.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/sign.jpeg" />
+               </image>
+            </ImageView>
+            <Hyperlink fx:id="alreadymember" alignment="CENTER" layoutX="179.0" layoutY="502.0" onAction="#Onhyperlink" prefHeight="24.0" prefWidth="122.0" text="I am already member" underline="true" />
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="481.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="85.0" layoutY="81.0" prefHeight="30.0" prefWidth="198.0" text="Sign Up">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="40.0" />
+               </font>
+            </Label>
+            <VBox layoutX="83.0" layoutY="145.0" prefHeight="406.0" prefWidth="342.0">
+               <children>
+                  <GridPane prefHeight="413.0" prefWidth="342.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.20001220703125" minWidth="10.0" prefWidth="29.599999999999994" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.4" minWidth="10.0" prefWidth="306.4" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../../../img/icons8-mail-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+                           <image>
+                              <Image url="@../../../img/icons8-password-60.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/icons8-username-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                           <image>
+                              <Image url="@../../../img/icons8-address-30.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                           <image>
+                              <Image url="@../../../img/icons8-password-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                           <image>
+                              <Image url="@../../../img/icons8-phone-50.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="nametext" layoutX="1.0" layoutY="6.0" prefHeight="45.0" prefWidth="255.0" promptText="Name" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="62.0" layoutY="49.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="emailtext" layoutX="1.0" layoutY="6.0" prefHeight="45.0" prefWidth="255.0" promptText="Email" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="62.0" layoutY="52.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="addresstext" layoutX="1.0" layoutY="6.0" prefHeight="45.0" prefWidth="255.0" promptText="Address" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="62.0" layoutY="52.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <TextField fx:id="contacttext" layoutX="1.0" layoutY="6.0" prefHeight="45.0" prefWidth="255.0" promptText="Contact" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="62.0" layoutY="52.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <PasswordField fx:id="confirmpasswordtext" layoutY="5.0" prefHeight="45.0" prefWidth="255.0" promptText="Confirm Password" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="63.0" layoutY="54.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <PasswordField fx:id="passwordtext" layoutY="5.0" prefHeight="45.0" prefWidth="255.0" promptText="Password" style="-fx-background-color: #ffffff;" />
+                              <Line endX="194.20001220703125" endY="2.600006103515625" layoutX="61.0" layoutY="52.0" startX="-61.9999885559082" startY="1.9999847412109375" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <Button fx:id="registerbutton" layoutX="83.0" layoutY="579.0" mnemonicParsing="false" onAction="#Onclickregister" prefHeight="46.0" prefWidth="94.0" style="-fx-background-color: #0096C7;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="passwordnotmatching" alignment="CENTER" layoutX="85.0" layoutY="320.0" prefHeight="18.0" prefWidth="191.0" textFill="RED" />
+            <Button fx:id="BackBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackBtnProcess" prefHeight="42.0" prefWidth="47.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/icons8-go-back.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

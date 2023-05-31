@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="962.0" spacing="10.0" style="-fx-background-color: #cbdb90;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myproject.ShopStripController">
+   <children>
+      <Label fx:id="shopnametext" alignment="CENTER" prefHeight="60.0" prefWidth="490.0" text="Label" />
+      <Label fx:id="emailtext" alignment="CENTER" prefHeight="60.0" prefWidth="202.0" text="Label" />
+      <Label fx:id="contacttext" alignment="CENTER" prefHeight="60.0" prefWidth="129.0" text="Label" />
+      <Button fx:id="nextshoppage" mnemonicParsing="false" onAction="#Onpressshoppage" prefHeight="49.0" prefWidth="107.0" style="-fx-background-color: #cbdb90ff;">
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/next.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</HBox>
