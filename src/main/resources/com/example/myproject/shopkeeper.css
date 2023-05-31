@@ -1,0 +1,70 @@
+.root {
+    /*-fx-background-color: linear-gradient(to bottom, #E6FFFD, #B799FF);*/
+    -fx-background-color: linear-gradient(to bottom, #F7ECDE, #9ED2C6);
+}
+
+.myelement {
+    -fx-background-color: rgba(255, 255, 255, 0); /* Transparent white */
+}
+.trans{
+    -fx-background-color: rgba(255, 255, 255, 0); /* Transparent white */
+}
+
+.myelement:hover{
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 10);
+}
+
+.nav {
+    -fx-background-color: linear-gradient(to bottom right, #E8F6EF, #AEE2FF);
+}
+
+.white-background{
+    -fx-background-color: #ffffff;
+}
+
+.side_bar {
+    -fx-background-color: linear-gradient(to bottom right, #E8F6EF, #AEE2FF);
+}
+
+.menu{
+    -fx-background-color: #E3F4F4;
+    -fx-background-radius: 20;
+    -fx-border-radius: 10;
+}
+
+.menu:hover{
+    -fx-background-color: #9ED2C6;
+}
+
+.shadow_effect {
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 10);
+}
+
+.btn_effect{
+    -fx-background-radius: 25;
+    -fx-border-radius: 12;
+    -fx-background-color: #DBDFAA;
+}
+
+.btn_effect:hover{
+    --fxbackground-color: #73A9AD;
+}
+
+
+.prod_list_item{
+    -fx-padding: 10 5 10 5;
+    -fx-start-margin: 10;
+}
+
+.radio-button {
+    -fx-margin: 10px, 5px, 10px, 5px;
+    -fx-padding: 10px, 5px, 10px, 5px;
+}
+
+#vbox {
+    -fx-background-color: transparent; /* Set the background color to transparent */
+    -fx-border-radius: 25;
+    -fx-border-width: 0; /* Remove the border width */
+    -fx-padding: 0; /* Remove any padding */
+}
+
