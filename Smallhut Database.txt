@@ -1,0 +1,257 @@
+Create Table Shopkeeper (
+shop_id VARCHAR2(20) Primary Key,
+name VARCHAR2(50) Not Null,
+email VARCHAR2(50) Not Null,
+password VARCHAR2(50) Not Null,
+address VARCHAR2(50) Not Null,
+contact NUMBER(10) Not Null
+);
+
+Create Table Customer (
+cust_id VARCHAR2(20) Primary Key,
+name VARCHAR2(50) Not Null,
+email VARCHAR2(50) Not Null,
+password VARCHAR2(50) Not Null,
+address VARCHAR2(50) Not Null,
+contact NUMBER(10) Not Null
+);
+
+Create Table Buy (
+shop_id VARCHAR2(20),
+cust_id VARCHAR2(20),
+totprice NUMBER(10,2),
+transdate DATE,
+transactionid VARCHAR2(20),
+shop_name VARCHAR2(40),
+cust_name VARCHAR2(40),
+Foreign Key(shop_id) References Shopkeeper(shop_id),
+Foreign Key(cust_id) References Customer(cust_id)
+);
+
+Create Table Product (
+prod_id VARCHAR2(20) Primary Key,
+name VARCHAR2(80) Not Null,
+category VARCHAR2(50) Not Null,
+manuf VARCHAR2(50) Not Null,
+exp_per NUMBER(10) Not Null,
+price NUMBER(10,2) Not Null
+);
+
+Create Table Inventory (
+shop_id VARCHAR2(20),
+prod_id VARCHAR2(20),
+quantity NUMBER(10) Not Null,
+man_date DATE,
+Foreign Key(shop_id) References Shopkeeper(shop_id),
+Foreign Key(prod_id) References Product(prod_id)
+);
+
+Insert Into Product Values ('prod_1','Tata Coffee Grand Classic Instant Coffee','Beverages','Tata Coffee',365,180);
+Insert Into Product Values ('prod_2','Tata Coffee Grand Filter Coffee','Beverages','Tata Coffee',365,40);
+Insert Into Product Values ('prod_3','Nescafe Sunrise Coffee','Beverages','Nescafe',365,200);
+Insert Into Product Values ('prod_4','Nescafe Classic Instant Coffee','Beverages','Nescafe',365,250);
+Insert Into Product Values ('prod_5','Nescafe Gold Cappuccino','Beverages','Nescafe',365,140);
+Insert Into Product Values ('prod_6','Nescafe Intense Cafe','Beverages','Nescafe',180,30);
+Insert Into Product Values ('prod_7','Bru Instant Coffee','Beverages','Bru',420,180);
+Insert Into Product Values ('prod_8','Bru Grand Label Filter Coffee','Beverages','Bru',180,20);
+Insert Into Product Values ('prod_9','Bru Super Strong Coffee','Beverages','Bru',180,100);
+Insert Into Product Values ('prod_10','Blue Tokai Coffee','Beverages','Blue Tokai',90,200);
+
+Insert Into Product Values ('prod_11','Tata Tea Agni','Beverages','Tata Tea',365,20);
+Insert Into Product Values ('prod_12','Tata Tea Gold','Beverages','Tata Tea',365,50);
+Insert Into Product Values ('prod_13','Tata Tea Premium','Beverages','Tata Tea',365,50);
+Insert Into Product Values ('prod_14','Tata Tea Gemini','Beverages','Tata Tea',365,40);
+Insert Into Product Values ('prod_15','Wagh Bakri Premium Leaf Tea','Beverages','Wagh Bakri',365,55);
+Insert Into Product Values ('prod_16','Wagh Bakri Premium Assam Tea','Beverages','Wagh Bakri',365,75);
+Insert Into Product Values ('prod_17','Society Leaf Tea','Beverages','Society',365,60);
+Insert Into Product Values ('prod_18','Society Premium Green Tea','Beverages','Society',365,100);
+Insert Into Product Values ('prod_19','Society One Minute Elaichi Instant
+Tea','Beverages','Society',365,100);
+Insert Into Product Values ('prod_20','Lipton Iced Tea Peach','Beverages','Lipton',365,130);
+
+Insert Into Product Values ('prod_21','Tropicana Mixed Fruit Delight','Beverages','Tropicana',180,12);
+Insert Into Product Values ('prod_22','Tropicana Litchi Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_23','Tropicana Orange Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_24','Tropicana Apple Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_25','Tropicana Mango Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_26','Tropicana Pomegranate Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_27','Tropicana Guava Delight','Beverages','Tropicana',180,10);
+Insert Into Product Values ('prod_28','B Natural Apple Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_29','B Natural Orange Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_30','B Natural Guava Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_31','B Natural Litchi Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_32','B Natural Mango Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_33','B Natural Mixed Fruit Juice','Beverages','B Natural',180,10);
+Insert Into Product Values ('prod_34','Patanjali Aloevera Juice','Beverages','Patanjali',180,21);
+Insert Into Product Values ('prod_35','Patanjali Wheat Grass Juice','Beverages','Patanjali',180,20);
+
+Insert Into Product Values ('prod_36','Coca Cola Cold Drink','Beverages','Coca Cola',90,20);
+Insert Into Product Values ('prod_37','Pepsi Cold Drink','Beverages','Pepsi',90,20);
+Insert Into Product Values ('prod_38','Thums Up Cold Drink','Beverages','Thums Up',90,20);
+Insert Into Product Values ('prod_39','Sprite Lemon Cold Drink','Beverages','Sprite',90,20);
+Insert Into Product Values ('prod_40','Maaza Mango','Beverages','Maaza',90,20);
+
+Insert Into Product Values ('prod_41','White Sandwich Bread','Bakery','Britannia',6,50);
+Insert Into Product Values ('prod_42','Brown Sandwich Bread','Bakery','Britannia',6,30);
+Insert Into Product Values ('prod_43','Multigrain Sandwich Bread','Bakery','Modern',6,55);
+Insert Into Product Values ('prod_44','Whole Wheat Sandwich Bread','Bakery','Patanjali',6,60);
+Insert Into Product Values ('prod_45','White Sandwich Bread','Bakery','Fresho',6,50);
+
+Insert Into Product Values ('prod_46','Parle G','Bakery','Parle',150,5);
+Insert Into Product Values ('prod_47','Hide & Seek','Bakery','Parle',150,30);
+Insert Into Product Values ('prod_48','Monaco','Bakery','Parle',150,10);
+Insert Into Product Values ('prod_49','Krack Jack','Bakery','Parle',150,40);
+Insert Into Product Values ('prod_50','20-20','Bakery','Parle',150,20);
+Insert Into Product Values ('prod_51','Good Day','Bakery','Britannia',150,25);
+Insert Into Product Values ('prod_52','Marie Gold','Bakery','Britannia',150,10);
+Insert Into Product Values ('prod_53','Bourbon','Bakery','Britannia',150,30);
+Insert Into Product Values ('prod_54','50-50','Bakery','Britannia',150,50);
+Insert Into Product Values ('prod_55','NutriChoice','Bakery','Britannia',150,10);
+Insert Into Product Values ('prod_56','Oreo','Bakery','Cadbury',150,35);
+Insert Into Product Values ('prod_57','Dark Fantasy','Bakery','Sunfeast',150,35);
+Insert Into Product Values ('prod_58','Farmlite','Bakery','Sunfeast',150,50);
+Insert Into Product Values ('prod_59','Moms Magic','Bakery','Sunfeast',150,20);
+Insert Into Product Values ('prod_60','Cashew Badam Cookies','Bakery','Unibic',150,15);
+
+Insert Into Product Values ('prod_61','Golden Crown Mango Pulp Alphanso','Canned Goods','Golden Crown',540,350);
+Insert Into Product Values ('prod_62','Golden Crown Fruit Cocktail','Canned Goods','Golden Crown',540,250);
+Insert Into Product Values ('prod_63','Golden Crown Panko Bread Crumbs','Canned Goods','Golden Crown',540,180);
+Insert Into Product Values ('prod_64','Golden Crown Pineapple Slice','Canned Goods','Golden Crown',540,270);
+Insert Into Product Values ('prod_65','Golden Crown Red Cherry','Canned Goods','Golden Crown',540,360);
+
+Insert Into Product Values ('prod_66','Maggi Hot & Sweet Tomato Chilli Sauce','Canned Goods','Maggi',540,180);
+Insert Into Product Values ('prod_67','Maggi Rich Tomato Ketchup','Canned Goods','Maggi',540,160);
+Insert Into Product Values ('prod_68','Maggi Pichkoo Rich Tomato Ketchup','Canned Goods','Maggi',270,15);
+Insert Into Product Values ('prod_69','Maggi Pichkoo Hot & Sweet Tomato Chilli Sauce','Canned Goods','Maggi',270,10);
+Insert Into Product Values ('prod_70','Maggi Pichkoo Imli Sauce','Canned Goods','Maggi',270,15);
+Insert Into Product Values ('prod_71','Kissan Mixed Fruit Jam','Canned Goods','Kissan',180,20);
+Insert Into Product Values ('prod_72','Kissan Fresh Tomato Ketchup','Canned Goods','Kissan',180,15);
+Insert Into Product Values ('prod_73','Kissan Sweet & Spicy Sauce','Canned Goods','Kissan',180,20);
+Insert Into Product Values ('prod_74','Kissan Chilli Tomato Sauce','Canned Goods','Kissan',180,70);
+Insert Into Product Values ('prod_75','Kissan Pineapple Jam','Canned Goods','Kissan',180,150);
+
+Insert Into Product Values ('prod_76','Amul Cheese Slices','Dairy','Amul',30,80);
+Insert Into Product Values ('prod_77','Amul Cheese Block','Dairy','Amul',30,120);
+Insert Into Product Values ('prod_78','Amul Cheese Spread','Dairy','Amul',30,100);
+Insert Into Product Values ('prod_79','Amul Taaza Milk','Dairy','Amul',30,70);
+Insert Into Product Values ('prod_80','Amul Gold Milk','Dairy','Amul',30,80);
+Insert Into Product Values ('prod_81','Lactose Free Milk','Dairy','Amul',30,100);
+Insert Into Product Values ('prod_82','Amul Kool Milk - Kesar Flavour','Dairy','Amul',180,25);
+Insert Into Product Values ('prod_83','Amul Kool Milk - Badam Flavour','Dairy','Amul',180,25);
+Insert Into Product Values ('prod_84','Amul Kool Milk - Elaichi Flavour','Dairy','Amul',180,25);
+Insert Into Product Values ('prod_85','Amul Kool Milk - Rose Flavour','Dairy','Amul',180,25);
+Insert Into Product Values ('prod_86','Amul Lassi - Rose Flavour','Dairy','Amul',180,20);
+Insert Into Product Values ('prod_87','Amul Stirred Fruit Yoghurt - Strawberry','Dairy','Amul',180,30);
+Insert Into Product Values ('prod_88','Amul Stirred Fruit Yoghurt - Pineapple','Dairy','Amul',180,30);
+Insert Into Product Values ('prod_89','Amul Stirred Fruit Yoghurt - Blueberry','Dairy','Amul',180,30);
+Insert Into Product Values ('prod_90','Amul Sweet Lassi','Dairy','Amul',180,20);
+Insert Into Product Values ('prod_91','Amul Butter Chiplets','Dairy','Amul',180,65);
+Insert Into Product Values ('prod_92','Mother Dairy Classic Dahi','Dairy','Mother Dairy',180,25);
+Insert Into Product Values ('prod_93','Mother Dairy Cheese Slice','Dairy','Mother Dairy',180,75);
+Insert Into Product Values ('prod_94','Mother Dairy Table Butter','Dairy','Mother Dairy',180,60);
+Insert Into Product Values ('prod_95','Mother Dairy Mishti Doi','Dairy','Mother Dairy',180,20);
+
+Insert Into Product Values ('prod_96','Kelloggs Corn Flakes With Real Honey','Dry Goods','Kelloggs',270,170);
+Insert Into Product Values ('prod_97','Kelloggs Corn Flakes With Real Almond & Honey','Dry Goods','Kelloggs',270,170);
+Insert Into Product Values ('prod_98','Kelloggs Corn Flakes With Real Strawberry Puree','Dry Goods','Kelloggs',270,170);
+Insert Into Product Values ('prod_99','Kelloggs Original Special K','Dry Goods','Kelloggs',270,170);
+Insert Into Product Values ('prod_100','Quaker Multigrain Oats','Dry Goods','Quaker',270,140);
+
+Insert Into Product Values ('prod_101','Aashirvaad Atta','Dry Goods','Aashirvaad',120,64);
+Insert Into Product Values ('prod_102','Fortune Chakki Fresh Atta','Dry Goods','Fortune',120,50);
+Insert Into Product Values ('prod_103','BB Royal Whole Wheat Atta','Dry Goods','BB Royal',120,72);
+Insert Into Product Values ('prod_104','Nature Fresh Sampoorna Chakki Atta','Dry Goods','Nature Fresh',120,50);
+Insert Into Product Values ('prod_105','Pillsbury Chakki Fresh Atta','Dry Goods','Pillsbury',120,61);
+Insert Into Product Values ('prod_106','Rajdhani Chakki Fresh Atta','Dry Goods','Rajdhani',120,55);
+Insert Into Product Values ('prod_107','Patanjali Atta','Dry Goods','Patanjali',120,40);
+Insert Into Product Values ('prod_108','24 Mantra Whole Wheat Atta','Dry Goods','24 Mantra',120,58);
+Insert Into Product Values ('prod_109','Organic Tattva Wheat Flour','Dry Goods','Organic Tattva',120,75);
+Insert Into Product Values ('prod_110','Organic Tattva Bajra Flour','Dry Goods','Organic Tattva',120,140);
+Insert Into Product Values ('prod_111','Dhampur Green Natural Brown Sugar','Dry Goods','Dhampur Green',365,100);
+Insert Into Product Values ('prod_112','Sugarlite 50% Less Calories Sugar','Dry Goods','Sugarlite',365,200);
+Insert Into Product Values ('prod_113','Madhur Sugar','Dry Goods','Madhur',365,60);
+Insert Into Product Values ('prod_114','Uttam Sugar White Sachet','Dry Goods','Uttam Sugar',365,150);
+Insert Into Product Values ('prod_115','Pro Nature Brown Sugar','Dry Goods','Pro Nature',365,150);
+
+Insert Into Product Values ('prod_116','Tulip Pork - Luncheon Meat','Meat','Tulip',365,325);
+Insert Into Product Values ('prod_117','Kellys Pork Luncheon Meat - Classic','Meat','Kellys',365,475);
+Insert Into Product Values ('prod_118','Kellys Pork Luncheon Meat - Cheese','Meat','Kellys',365,475);
+Insert Into Product Values ('prod_119','Kellys Pork Luncheon Meat - Black Pepper','Meat','Kellys',365,475);
+Insert Into Product Values ('prod_120','Kellys Chicken Luncheon Meat','Meat','Kellys',365,475);
+Insert Into Product Values ('prod_121','Prasuma Chicken Sausage - Beechwood Smoked','Meat','Prasuma',10,200);
+Insert Into Product Values ('prod_122','Prasuma Pork Ham - Beechwood Smoked','Meat','Prasuma',10,250);
+Insert Into Product Values ('prod_123','Prasuma Pork Sausage - Beechwood Smoked','Meat','Prasuma',10,250);
+Insert Into Product Values ('prod_124','Prasuma Chicken Cheese & Chiili Sausage Sausage - Beechwood Smoked','Meat','Prasuma',10,200);
+Insert Into Product Values ('prod_125','Prasuma Pork Frankfurter - Beechwood Smoked','Meat','Prasuma',10,300);
+Insert Into Product Values ('prod_126','Everest Meat Masala','Meat','Everest',180,45);
+Insert Into Product Values ('prod_127','Everest Chicken Masala','Meat','Everest',180,45);
+Insert Into Product Values ('prod_128','Everest Tandoori Masala','Meat','Everest',180,45);
+Insert Into Product Values ('prod_129','Everest Chicken 65 Kabab Masala','Meat','Everest',180,45);
+Insert Into Product Values ('prod_130','Everest Meat Masala','Meat','Everest',180,100);
+
+Insert Into Product Values ('prod_131','Colin Glass & Surface Cleaner Liquid Spray','Cleaners','Colin',365,200);
+Insert Into Product Values ('prod_132','Lizol Disinfectant Surface & Floor Cleaner Liquid','Cleaners','Lizol',365,200);
+Insert Into Product Values ('prod_133','Harpic Toilet Cleaner Liquid','Cleaners','Harpic',365,200);
+Insert Into Product Values ('prod_134','Mr. Muscle Kitchen Cleaner Spray','Cleaners','Mr. Muscle',365,300);
+Insert Into Product Values ('prod_135','Mr. Muscle Floor Cleaner Liquid','Cleaners','Mr. Muscle',365,200);
+Insert Into Product Values ('prod_136','Surf Excel Detergent Bar','Cleaners','Surf Excel',365,35);
+Insert Into Product Values ('prod_137','Surf Excel Quick Wash Detergent Powder','Cleaners','Surf Excel',365,190);
+Insert Into Product Values ('prod_138','Rin Detergent Bar','Cleaners','Rin',365,10);
+Insert Into Product Values ('prod_139','Rin Refresh Lemon & Rose Detergent Powder','Cleaners','Rin',365,100);
+Insert Into Product Values ('prod_140','Tide Naturals Washing Detergent Powder','Cleaners','Tide',365,85);
+Insert Into Product Values ('prod_141','Tide Ultra Clean Detergent Washing Powder','Cleaners','Tide',365,170);
+Insert Into Product Values ('prod_142','Wheel Detergent Bar','Cleaners','Wheel',365,10);
+Insert Into Product Values ('prod_143','Wheel Green Lemon & Jasmine Detergent Powder','Cleaners','Wheel',365,75);
+Insert Into Product Values ('prod_144','Ghadi Detergent Bar','Cleaners','Surf Excel',365,10);
+Insert Into Product Values ('prod_145','Ghadi Quick Wash Detergent Powder','Cleaners','Surf Excel',365,75);
+
+Insert Into Product Values ('prod_146','Origami Kitchen Towels','Paper Goods','Origami',365,100);
+Insert Into Product Values ('prod_147','Origami Tissue Roll','Cleaners','Paper Goods',365,90);
+Insert Into Product Values ('prod_148','Origami Pocket Hanky','Paper Goods','Origami',365,130);
+Insert Into Product Values ('prod_149','Origami Plain Paper Party Plates','Paper Goods','Origami',365,80);
+Insert Into Product Values ('prod_150','Origami Printed Paper Party Cups','Paper Goods','Origami',365,80);
+Insert Into Product Values ('prod_151','Origami So Soft Wet Wipes - Lemon Flavour','Paper Goods','Origami',365,100);
+Insert Into Product Values ('prod_152','Premier Kitchen Towels','Paper Goods','Premier',365,100);
+Insert Into Product Values ('prod_153','Selpak Paper Towels','Paper Goods','Selpak',365,120);
+Insert Into Product Values ('prod_154','Pulp Wood Kitchen Towels','Paper Goods','Pulp Wood',365,75);
+Insert Into Product Values ('prod_155','Soft Touch Kitchen Towels','Paper Goods','Soft Touch',365,55);
+Insert Into Product Values ('prod_156','Hindalco Standard Aluminium Foil','Paper Goods','Hindalco',365,130);
+Insert Into Product Values ('prod_157','Freshee Aluminium Foil - Regular','Paper Goods','Freshee',365,140);
+Insert Into Product Values ('prod_158','Freshee Kitchen Foil - Patterned Aluminium','Paper Goods','Freshee',365,150);
+Insert Into Product Values ('prod_159','Ezee Silver Aluminium Foil','Paper Goods','Ezee',365,110);
+Insert Into Product Values ('prod_160','Oddy Uniwrap Food Wrapping Paper','Paper Goods','Oddy',365,100);
+
+Insert Into Product Values ('prod_161','Detol Antiseptic Liquid','Personal Care','Detol',365,75);
+Insert Into Product Values ('prod_162','Detol Instant Hand Sanitizer','Personal Care','Detol',365,25);
+Insert Into Product Values ('prod_163','Detol Bathing Bar Soap - Cool','Personal Care','Detol',365,40);
+Insert Into Product Values ('prod_164','Detol Hand Wash Liquid Refill','Personal Care','Detol',365,45);
+Insert Into Product Values ('prod_165','Detol Body Wash & Shower Gel','Personal Care','Detol',365,200);
+Insert Into Product Values ('prod_166','Nivea Soft Light Moisturizer','Personal Care','Nivea',365,100);
+Insert Into Product Values ('prod_167','Nivea Aloe Hydration Body Lotion','Personal Care','Nivea',365,200);
+Insert Into Product Values ('prod_168','Nivea Creme - All Season Multi-Purpose Cream','Personal Care','Nivea',365,140);
+Insert Into Product Values ('prod_169','Nivea Deodorant Roll On','Personal Care','Nivea',365,120);
+Insert Into Product Values ('prod_170','Nivea Oil In Lotion','Personal Care','Nivea',365,300);
+Insert Into Product Values ('prod_171','Dabur Red Toothpaste','Personal Care','Dabur',365,70);
+Insert Into Product Values ('prod_172','Dabur Ayurvedic Medicine Lal Tail','Personal Care','Dabur',365,120);
+Insert Into Product Values ('prod_173','Dabur Lal Dant Manjan','Personal Care','Dabur',365,65);
+Insert Into Product Values ('prod_174','Dabur Gulabari Premium Rose Water','Personal Care','Dabur',365,50);
+Insert Into Product Values ('prod_175','Dabur Meswak Toothpaste','Personal Care','Dabur',365,70);
+
+
+Insert Into Shopkeeper Values ('shop_1','Discount Grocery','discountgrocery@gmail.com','Discount@123','Akurdi','5626526521');
+Insert Into Shopkeeper Values ('shop_2','Freedom Market','freedommarket@gmail.com','Freedom@123','Akurdi','3216843214');
+Insert Into Shopkeeper Values ('shop_3','Grand Stores','grandstores@gmail.com','Grand@123','Ravet','9875316544');
+Insert Into Shopkeeper Values ('shop_4','Corner Store','cornerstore@gmail.com','Corner@123','Akurdi','7894654121');
+Insert Into Shopkeeper Values ('shop_5','One Stop Grocery','onestopgrocery@gmail.com','Onestop@123','Nigdi','4756854265');
+Insert Into Shopkeeper Values ('shop_6','World Mart','worldmart@gmail.com','World@123','Akurdi','2346526521');
+Insert Into Shopkeeper Values ('shop_7','Sunrise Mart','sunrisemart@gmail.com','Sunrise@123','Akurdi','3216843214');
+Insert Into Shopkeeper Values ('shop_8','Wonder Mart','wondermart@gmail.com','Wonder@123','Akurdi','5678316544');
+Insert Into Shopkeeper Values ('shop_9','People Mart','peoplemart@gmail.com','People@123','Akurdi','2894654121');
+Insert Into Shopkeeper Values ('shop_10','Save Mart','savemart@gmail.com','Save@123','Akurdi','3856854265');
+
+
+Insert Into Customer Values ('cust_1','Sonu Manjre','sonumanjre@gmail.com','Sonu@123','Akurdi','5626526521');
+Insert Into Customer Values ('cust_2','Samir Bhikare','samirbhikare@gmail.com','Samir@123','Akurdi','3216843214');
+Insert Into Customer Values ('cust_3','Dada Kondke','dadakondke@gmail.com','Dada@123','Ravet','9875316544');
+Insert Into Customer Values ('cust_4','Anand Shinde','anandshinde@gmail.com','Anand@123','Akurdi','7894654121');
+Insert Into Customer Values ('cust_5','Navin Udave','navinudave@gmail.com','Navin@123','Nigdi','4756854265');
